@@ -358,7 +358,7 @@ databases.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nschiett.github.io/fishflux/" class="external-link">fishflux</a></span><span class="op">)</span></span>
 <span><span class="co"># example</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/name_errors.html">name_errors</a></span><span class="op">(</span><span class="st">"Zebrazoma scopas"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/name_errors.html">name_errors</a></span><span class="op">(</span><span class="st">"Zebrazoma scopas"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(Subfamily, GenCode, FamCode)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(FamCode)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(Order, Ordnum, Class, ClassNum)`</span></span>
@@ -373,7 +373,7 @@ extracted from <span class="citation">Froese and Pauly
 (2018)</span>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># example</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/find_lw.html">find_lw</a></span><span class="op">(</span><span class="st">"Zebrasoma scopas"</span>, mirror <span class="op">=</span> <span class="st">"se"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/find_lw.html">find_lw</a></span><span class="op">(</span><span class="st">"Zebrasoma scopas"</span>, mirror <span class="op">=</span> <span class="st">"se"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;            species   lwa_m      lwa_sd lwb_m    lwb_sd</span></span>
 <span><span class="co">#&gt; 1 Zebrasoma scopas 0.02512 0.002709184  2.98 0.0255102</span></span></code></pre></div>
 <p>The model uses parameters von Bertalanffy’s growth model (VBGM) to
@@ -388,7 +388,7 @@ standardised estimations from <span class="citation">Morais and Bellwood
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># example</span></span>
 <span><span class="co"># The option otolith=TRUE filters out sources that used otoliths for the estimation of growth parameters</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/growth_params.html">growth_params</a></span><span class="op">(</span><span class="st">"Sargocentron microstoma"</span>, otolith <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/growth_params.html">growth_params</a></span><span class="op">(</span><span class="st">"Sargocentron microstoma"</span>, otolith <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 7</span></span></span>
 <span><span class="co">#&gt;   species                 Locality                 k  Linf    t0 method comments</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span></span>
@@ -404,7 +404,8 @@ overview of all parameters available, <code>fishflux</code> provides a
 wrapper function <code><a href="../reference/model_parameters.html">model_parameters()</a></code>. </p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># example</span></span>
-<span><span class="va">zebsco</span> <span class="op">&lt;-</span> <span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="st">"Zebrasoma scopas"</span>, family <span class="op">=</span> <span class="st">"Acanthuridae"</span>, temp <span class="op">=</span> <span class="fl">27</span>, mirror <span class="op">=</span> <span class="st">"se"</span><span class="op">)</span></span>
+<span><span class="va">zebsco</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="st">"Zebrasoma scopas"</span>, family <span class="op">=</span> <span class="st">"Acanthuridae"</span>,</span>
+<span>                           temp <span class="op">=</span> <span class="fl">27</span>, mirror <span class="op">=</span> <span class="st">"se"</span><span class="op">)</span></span>
 <span><span class="co">## Here we set the temperature at 27 degrees as an example, this the average sea temperature in Moorea, French Polynesia</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">zebsco</span><span class="op">)</span></span>
@@ -429,9 +430,9 @@ designed to use the MCMC sampler in order to include uncertainty of
 predictions.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## load the example parameters for Zebrasoma scopas, a list</span></span>
-<span><span class="va">param_zebsco</span> <span class="op">&lt;-</span> <span class="fu">fishflux</span><span class="fu">::</span><span class="va"><a href="../reference/param_zebsco.html">param_zebsco</a></span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">param_zebsco</span><span class="op">)</span></span>
 <span><span class="co">## Run the model, specifying the target length(s) and the parameter list</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/cnp_model_mcmc.html">cnp_model_mcmc</a></span><span class="op">(</span>TL <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">20</span>, param <span class="op">=</span> <span class="va">param_zebsco</span><span class="op">)</span></span>
+<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cnp_model_mcmc.html">cnp_model_mcmc</a></span><span class="op">(</span>TL <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">20</span>, param <span class="op">=</span> <span class="va">param_zebsco</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in FUN(X[[i]], ...): not inputting certain parameters may give wrong</span></span>
 <span><span class="co">#&gt; results</span></span>
 <span><span class="co">#&gt; Warning in FUN(X[[i]], ...): adding standard values for mdw_m</span></span>
@@ -832,8 +833,8 @@ predictions.</p>
 <span><span class="co">#&gt; Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)</span></span>
 <span><span class="co">#&gt; Chain 1: </span></span>
 <span><span class="co">#&gt; Chain 1:  Elapsed Time: 0 seconds (Warm-up)</span></span>
-<span><span class="co">#&gt; Chain 1:                0.005 seconds (Sampling)</span></span>
-<span><span class="co">#&gt; Chain 1:                0.005 seconds (Total)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.006 seconds (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.006 seconds (Total)</span></span>
 <span><span class="co">#&gt; Chain 1:</span></span>
 <span><span class="co">#&gt; Warning in FUN(X[[i]], ...): not inputting certain parameters may give wrong</span></span>
 <span><span class="co">#&gt; results</span></span>
@@ -925,15 +926,15 @@ predictions.</p>
 <span><span class="co">#&gt; Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)</span></span>
 <span><span class="co">#&gt; Chain 1: </span></span>
 <span><span class="co">#&gt; Chain 1:  Elapsed Time: 0 seconds (Warm-up)</span></span>
-<span><span class="co">#&gt; Chain 1:                0.005 seconds (Sampling)</span></span>
-<span><span class="co">#&gt; Chain 1:                0.005 seconds (Total)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.006 seconds (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.006 seconds (Total)</span></span>
 <span><span class="co">#&gt; Chain 1:</span></span></code></pre></div>
 <p>The object <code>model</code> now contains all the samples generated
 from the MCMC simulation and a summary of all parameters generated. To
 extract certain variables of interest, use the <code><a href="../reference/extract.html">extract()</a></code>
 function. Predictions for fluxes of C, N and P are all in g / day. </p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/extract.html">extract</a></span><span class="op">(</span><span class="va">model</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fn"</span>,<span class="st">"Fp"</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/extract.html">extract</a></span><span class="op">(</span><span class="va">model</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fn"</span>,<span class="st">"Fp"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;    TL      Fn_mean    Fn_median        Fn_sd      Fn_2.5%    Fn_97.5%</span></span>
 <span><span class="co">#&gt; 1   5 0.0009010635 0.0008278347 0.0004502803 0.0002016293 0.001920226</span></span>
 <span><span class="co">#&gt; 2   6 0.0012989518 0.0012221403 0.0005896832 0.0003933311 0.002681194</span></span>
@@ -996,7 +997,7 @@ limitation of C, N and P respectively. The function
 <code><a href="../reference/plot_cnp.html">plot_cnp()</a></code> plots the predicted output of the model. </p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## limitation</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/limitation.html">limitation</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/limitation.html">limitation</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_to_fishflux_files/figure-html/unnamed-chunk-10-1.png" width="768"></p>
 <pre><code><span><span class="co">#&gt;    tl nutrient prop_lim</span></span>
 <span><span class="co">#&gt; 1   5        c    0.000</span></span>
@@ -1048,11 +1049,11 @@ limitation of C, N and P respectively. The function
 <span><span class="co">#&gt; 47 19        p    0.012</span></span>
 <span><span class="co">#&gt; 48 20        p    0.014</span></span>
 <span><span class="co">## Plot one variable:</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_cnp.html">plot_cnp</a></span><span class="op">(</span><span class="va">model</span>,  y <span class="op">=</span> <span class="st">"Fp"</span>, x <span class="op">=</span> <span class="st">"tl"</span>, probs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">0.95</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span><span class="fu"><a href="../reference/plot_cnp.html">plot_cnp</a></span><span class="op">(</span><span class="va">model</span>,  y <span class="op">=</span> <span class="st">"Fp"</span>, x <span class="op">=</span> <span class="st">"tl"</span>, probs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">0.95</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 <p><img src="intro_to_fishflux_files/figure-html/unnamed-chunk-10-2.png" width="768"></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Plot multiple variables:</span></span>
-<span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_cnp.html">plot_cnp</a></span><span class="op">(</span><span class="va">model</span>,  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fp"</span>, <span class="st">"Gp"</span>, <span class="st">"Ip"</span>, <span class="st">"Wp"</span><span class="op">)</span>, x <span class="op">=</span> <span class="st">"tl"</span>, probs <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/plot_cnp.html">plot_cnp</a></span><span class="op">(</span><span class="va">model</span>,  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Fp"</span>, <span class="st">"Gp"</span>, <span class="st">"Ip"</span>, <span class="st">"Wp"</span><span class="op">)</span>, x <span class="op">=</span> <span class="st">"tl"</span>, probs <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_to_fishflux_files/figure-html/unnamed-chunk-10-3.png" width="768"></p>
 </div>
 <div class="section level3">
@@ -1067,11 +1068,343 @@ input variables (rows). The input parameters and output variables of
 interest can be specified by arguments “par” and “out” respectively.
 </p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">fishflux</span><span class="fu">::</span><span class="fu"><a href="../reference/sensitivity.html">sensitivity</a></span><span class="op">(</span>TL <span class="op">=</span> <span class="fl">10</span>, param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>k_sd <span class="op">=</span> <span class="fl">0.2</span>, Dn_sd <span class="op">=</span> <span class="fl">0.2</span>, Dc_sd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/sensitivity.html">sensitivity</a></span><span class="op">(</span>TL <span class="op">=</span> <span class="fl">10</span>, param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>k_sd <span class="op">=</span> <span class="fl">0.2</span>, Dn_sd <span class="op">=</span> <span class="fl">0.2</span>, Dc_sd <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>,</span>
 <span>            par <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"k_sd"</span>,<span class="st">"Dn_sd"</span>,<span class="st">"Dc_sd"</span><span class="op">)</span>, </span>
-<span>            out <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Ic"</span>, <span class="st">"In"</span>, <span class="st">"Ip"</span>, <span class="st">"Gc"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_to_fishflux_files/figure-html/unnamed-chunk-11-1.png" width="768">
-## More information</p>
+<span>            out <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Ic"</span>, <span class="st">"In"</span>, <span class="st">"Ip"</span>, <span class="st">"Gc"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): not inputting</span></span>
+<span><span class="co">#&gt; certain parameters may give wrong results</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for k_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lt_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_sd</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; SAMPLING FOR MODEL 'cnpmodelmcmc' NOW (CHAIN 1).</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration:   1 / 1000 [  0%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 100 / 1000 [ 10%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 200 / 1000 [ 20%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 300 / 1000 [ 30%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 400 / 1000 [ 40%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 500 / 1000 [ 50%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 600 / 1000 [ 60%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 700 / 1000 [ 70%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 800 / 1000 [ 80%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 900 / 1000 [ 90%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: </span></span>
+<span><span class="co">#&gt; Chain 1:  Elapsed Time: 0 seconds (Warm-up)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Total)</span></span>
+<span><span class="co">#&gt; Chain 1:</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): not inputting</span></span>
+<span><span class="co">#&gt; certain parameters may give wrong results</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for k_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lt_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_sd</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; SAMPLING FOR MODEL 'cnpmodelmcmc' NOW (CHAIN 1).</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration:   1 / 1000 [  0%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 100 / 1000 [ 10%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 200 / 1000 [ 20%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 300 / 1000 [ 30%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 400 / 1000 [ 40%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 500 / 1000 [ 50%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 600 / 1000 [ 60%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 700 / 1000 [ 70%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 800 / 1000 [ 80%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 900 / 1000 [ 90%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: </span></span>
+<span><span class="co">#&gt; Chain 1:  Elapsed Time: 0 seconds (Warm-up)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Total)</span></span>
+<span><span class="co">#&gt; Chain 1:</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): not inputting</span></span>
+<span><span class="co">#&gt; certain parameters may give wrong results</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for k_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_m</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lt_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ac_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for an_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for ap_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Dp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for linf_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for t0_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for theta_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for r_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for h_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwa_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for lwb_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for mdw_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for v_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0nz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for F0pz_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qc_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qn_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for Qp_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for alpha_sd</span></span>
+<span><span class="co">#&gt; Warning in cnp_mcmc(TL, param, iter, params_st, cor, ...): adding standard</span></span>
+<span><span class="co">#&gt; values for f0_sd</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; SAMPLING FOR MODEL 'cnpmodelmcmc' NOW (CHAIN 1).</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration:   1 / 1000 [  0%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 100 / 1000 [ 10%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 200 / 1000 [ 20%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 300 / 1000 [ 30%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 400 / 1000 [ 40%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 500 / 1000 [ 50%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 600 / 1000 [ 60%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 700 / 1000 [ 70%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 800 / 1000 [ 80%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 900 / 1000 [ 90%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: Iteration: 1000 / 1000 [100%]  (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1: </span></span>
+<span><span class="co">#&gt; Chain 1:  Elapsed Time: 0 seconds (Warm-up)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Sampling)</span></span>
+<span><span class="co">#&gt; Chain 1:                0.005 seconds (Total)</span></span>
+<span><span class="co">#&gt; Chain 1:</span></span></code></pre></div>
+<p><img src="intro_to_fishflux_files/figure-html/unnamed-chunk-11-1.png" width="768"></p>
+<pre><code><span><span class="co">#&gt;            Ic_CI        In_CI        Ip_CI        Gc_CI</span></span>
+<span><span class="co">#&gt; k_sd  0.03296944 3.956333e-03 1.318778e-03 1.266026e-02</span></span>
+<span><span class="co">#&gt; Dn_sd 0.24950299 3.859819e-03 9.980120e-03 6.731756e-11</span></span>
+<span><span class="co">#&gt; Dc_sd 0.01112390 2.464069e-10 8.188419e-11 6.544082e-11</span></span></code></pre>
+</div>
+</div>
+<div class="section level2">
+<h2 id="more-information">More information<a class="anchor" aria-label="anchor" href="#more-information"></a>
+</h2>
 <p>For more information on the theoretical framework of the model, see
 <span class="citation">Schiettekatte et al. (2020)</span> ( <a href="https://doi.org/10.1111/1365-2435.13618" class="external-link">paper</a> ). Every
 function of <code>fishflux</code> has a help page with more
@@ -1079,7 +1412,6 @@ documentation. In the case of errors, bugs or discomfort, you are
 invited to raise an <a href="https://github.com/nschiett/fishflux/issues" class="external-link">issue</a> on GitHub.
 <code>fishflux</code> is always in development and we are happy to take
 your comments or suggestions into consideration.</p>
-</div>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">references<a class="anchor" aria-label="anchor" href="#references"></a>
